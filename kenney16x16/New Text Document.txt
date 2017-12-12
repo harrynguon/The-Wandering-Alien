@@ -1,0 +1,17 @@
+105 x 62 tiles of (16x16)
+
+
+
+Green + brown tileset:
+
+Green outlines: 
+	Left: 160
+	Top: 576
+	Width: 160
+	Height: 368
+
+Brown inner tiles:
+	Left: 640
+	Top: 896
+	Width: 160
+	Height: 320
