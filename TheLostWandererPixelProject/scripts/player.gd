@@ -4,10 +4,10 @@ const GRAVITY_VEC = Vector2(0, 1000)
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 13
 const MIN_ONAIR_TIME = 0.1
-const WALK_SPEED = 140 # pixels/sec
+const WALK_SPEED = 160 # pixels/sec
 const JUMP_SPEED = 280
 const SIDING_CHANGE_SPEED = 7
-const MIN_JUMP = -100
+const MIN_JUMP = -80
 
 var linear_vel = Vector2()
 var onair_time = 0 #
