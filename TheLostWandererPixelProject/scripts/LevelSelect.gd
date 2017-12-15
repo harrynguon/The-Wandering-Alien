@@ -4,7 +4,12 @@ func _ready():
 	pass
 
 func _on_Level_1_pressed():
-	get_node("/root/global").goto_scene("res://scenes/levels/level1.tscn")
+	$AnimationPlayer.set_level(1)
+	$AnimationPlayer.play("fade_out")
+	
 
 func _on_Back_pressed():
-	get_node("/root/global").goto_scene("res://scenes/MainMenu.tscn")
+	var test = get_node("/root/global").goto_scene("res://scenes/MainMenu.tscn")
+
+func _on_AnimationPlayer_animation_finished( name ):
+	get_node("/root/global").goto_scene("res://scenes/levels/level%s.tscn" % $AnimationPlayer.level_pressed)
