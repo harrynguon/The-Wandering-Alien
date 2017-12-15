@@ -85,3 +85,16 @@ func _physics_process(delta):
 	if new_anim != anim:
 		anim = new_anim
 		$AnimatedSprite.play(anim)
+
+# make it invisible and inactive
+func prep_animation():
+	hide()
+	$Camera2D.current = false
+	$AnimatedSprite.stop()
+	set_physics_process(false)
+
+#make visible again and active
+func finish_animation():
+	show()
+	$Camera2D.current = true
+	set_physics_process(true)

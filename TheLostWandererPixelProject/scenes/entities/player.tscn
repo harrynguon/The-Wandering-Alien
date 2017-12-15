@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/art/player/idle.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/player/walk-1.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/player/walk-2.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/player/climb-1.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/player/climb-2.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/player/swim-1.png" type="Texture" id=7]
-[ext_resource path="res://assets/art/player/swim-2.png" type="Texture" id=8]
-[ext_resource path="res://assets/art/player/jump.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/player/fall.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/player/swim-1.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/player/swim-2.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/player/fall.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/player/climb-1.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/player/climb-2.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/player/jump.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -26,22 +26,22 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "climb",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
 "name": "swim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "jump",
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "climb",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "hurt",
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -51,7 +51,7 @@ custom_solver_bias = 0.0
 radius = 8.13062
 height = 4.99641
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
