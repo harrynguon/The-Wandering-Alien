@@ -19,14 +19,6 @@ run/icon="res://icon.png"
 
 global="*res://scripts/global.gd"
 
-[background]
-
-=false
-
-[color]
-
-=false
-
 [display]
 
 window/size/width=800

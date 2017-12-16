@@ -30,9 +30,6 @@ func _deferred_goto_scene(path):
 	# Instance the new scene
 	current_scene = s.instance()
 	
-	if current_scene.get_name() == "level1":
-		current_scene.set_invisible()
-	
 	# Add it to the active scene, as child of root
 	get_tree().get_root().add_child(current_scene)
 	

@@ -18,13 +18,20 @@ func _process(delta):
 			$OptionsMenu.hide()
 			menu_popped = false
 			timer = 0.0
-		
 
 func _on_Play_gui_input( ev ):
 	if (ev is InputEventMouseButton):
 		if (ev.pressed):
-			get_node("/root/global").goto_scene("res://scenes/LevelSelect.tscn")
+			$MarginContainer2/LevelSelectScreen/Tween.interpolate_property(\
+					$MarginContainer2, "rect_position", $MarginContainer2.rect_position,\
+					Vector2(-5, 0), 0.3, Tween.TRANS_QUINT, Tween.EASE_OUT)
+			$MarginContainer2/LevelSelectScreen/Tween.start()
 			
+func _on_LevelSelectScreen_back_btn_pressed():
+	$MarginContainer2/LevelSelectScreen/Tween.interpolate_property(\
+			$MarginContainer2, "rect_position", $MarginContainer2.rect_position,\
+			Vector2(800, 0), 0.3, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	$MarginContainer2/LevelSelectScreen/Tween.start()
 
 func _on_Options_gui_input( ev ):
 	if (ev is InputEventMouseButton):
@@ -34,7 +41,6 @@ func _on_Options_gui_input( ev ):
 			$OptionsMenu.show()
 			menu_popped = true
 			
-
 func _on_Quit_gui_input( ev ):
 	if (ev is InputEventMouseButton):
 		if (ev.pressed):
