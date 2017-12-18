@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "camera move"
-length = 4.0
+length = 4.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -18,7 +18,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0.5, 3.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 110, 200 ), Vector2( 700, 200 ) ]
@@ -103,7 +103,7 @@ autoplay = ""
 
 [node name="Camera2D" type="Camera2D" parent="AnimationPlayer"]
 
-offset = Vector2( 700, 200 )
+offset = Vector2( 110, 200 )
 anchor_mode = 1
 rotating = false
 current = false
@@ -126,6 +126,8 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [node name="fade_in_node" parent="." instance=ExtResource( 5 )]
+
+visible = false
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

@@ -1,4 +1,4 @@
-extends Node
+extends Sprite
 
 signal anim_finished
 
