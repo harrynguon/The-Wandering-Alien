@@ -24,6 +24,7 @@ global="*res://scripts/global.gd"
 window/size/width=800
 window/size/height=480
 window/stretch/mode="2d"
+window/stretch/aspect="expand"
 window/stretch/shrink="1"
 
 [editor_plugins]
@@ -59,6 +60,10 @@ texture={
 
 ui_click=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
+
+[mipmaps]
+
+=false
 
 [rendering]
 

@@ -7,13 +7,14 @@ const MIN_ONAIR_TIME = 0.1
 const WALK_SPEED = 160 # pixels/sec
 const JUMP_SPEED = 280
 const SIDING_CHANGE_SPEED = 7
-const MIN_JUMP = -80
+const MIN_JUMP = -40
 
 var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
 var key_picked_up = false
 var no_of_blue_gems = 0
+var no_lives = 3.0
 
 var anim=""
 
@@ -21,7 +22,13 @@ var anim=""
 onready var sprite = $AnimatedSprite
 
 func _ready():
-	pass
+	get_node("/root/global").connect("decrease_life", self, "hurt_player")
+
+# global will emit signal when player has been hurt (indicated by spike instance script, etc)
+func hurt_player(amount):
+	if no_lives - amount <= 0:
+		print("game_over")
+	no_lives -= amount
 
 func _physics_process(delta):
 	#increment counters
@@ -47,6 +54,8 @@ func _physics_process(delta):
 		target_speed -= 1
 	if Input.is_action_pressed("ui_right"):
 		target_speed +=  1
+	if Input.is_action_just_pressed("ui_down"):
+		get_node("/root/global").decrease_lives(1)
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)

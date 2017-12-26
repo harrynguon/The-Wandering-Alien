@@ -2,14 +2,14 @@
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/player/idle.png" type="Texture" id=2]
-[ext_resource path="res://assets/art/player/walk-1.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/player/walk-2.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/player/swim-1.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/player/swim-2.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/player/fall.png" type="Texture" id=7]
-[ext_resource path="res://assets/art/player/climb-1.png" type="Texture" id=8]
-[ext_resource path="res://assets/art/player/climb-2.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/player/jump.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/player/jump.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/player/walk-1.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/player/walk-2.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/player/fall.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/player/climb-1.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/player/climb-2.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/player/swim-1.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/player/swim-2.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -19,29 +19,29 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "swim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "jump",
+"name": "swim",
 "speed": 5.0
 } ]
 
@@ -62,17 +62,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "walk"
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -94,5 +94,6 @@ drag_margin_bottom = 0.1
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Smoothing" ]
 
 

@@ -1,5 +1,7 @@
 extends Node
 
+signal decrease_life(amount)
+
 var current_scene = null
 
 func _ready():
@@ -7,6 +9,9 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() - 1)
 	
+func decrease_lives(no_lives):
+	emit_signal("decrease_life", no_lives)
+
 func goto_scene(path):
 
     # This function will usually be called from a signal callback,
