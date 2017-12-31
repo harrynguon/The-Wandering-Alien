@@ -1,6 +1,7 @@
 extends Node
 
 signal decrease_life(amount)
+signal star_pickup
 
 var current_scene = null
 
@@ -11,6 +12,9 @@ func _ready():
 	
 func decrease_lives(no_lives):
 	emit_signal("decrease_life", no_lives)
+	
+func star_picked_up():
+	emit_signal("star_pickup")
 
 func goto_scene(path):
 
