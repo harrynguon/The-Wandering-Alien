@@ -5,8 +5,6 @@ var number_of_stars
 func _ready():
 	number_of_stars = 3
 	hide_buttons()
-	$AnimationPlayer.play("window_frame_fly_down")
-	pass
 	
 func play_animation():
 	if number_of_stars == 0:
@@ -17,7 +15,6 @@ func play_animation():
 		$AnimationPlayer.play("two_stars")
 	elif number_of_stars == 3:
 		$AnimationPlayer.play("three_stars")
-
 
 func _on_AnimationPlayer_animation_finished( name ):
 	if name == "window_frame_fly_down":
