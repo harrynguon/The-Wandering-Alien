@@ -11,7 +11,9 @@ func _ready():
 	menu_popped = false
 	timer = 0.0
 	$Player.play("default")
-	
+
+# For: Options menu to not allow instantaneous options menu opening+closing at the
+# same time
 func _process(delta):
 	if menu_popped:
 		timer += delta
@@ -23,6 +25,7 @@ func _process(delta):
 			menu_popped = false
 			timer = 0.0
 
+# Shift the level select screen over into view
 func _on_Play_gui_input( ev ):
 	if (ev is InputEventMouseButton):
 		if (ev.pressed):
@@ -31,7 +34,8 @@ func _on_Play_gui_input( ev ):
 					$MarginContainer2, "rect_position", $MarginContainer2.rect_position,\
 					Vector2(-5, 0), 0.3, Tween.TRANS_QUINT, Tween.EASE_OUT, 0.05)
 			$MarginContainer2/LevelSelectScreen/Tween.start()
-			
+
+# Shift the main menu screen back into view
 func _on_LevelSelectScreen_back_btn_pressed():
 	$MarginContainer/H/V/MenuOptions/Play.texture = playbtn
 	$MarginContainer2/LevelSelectScreen/Tween.interpolate_property(\
@@ -39,6 +43,7 @@ func _on_LevelSelectScreen_back_btn_pressed():
 			Vector2(800, 0), 0.3, Tween.TRANS_QUINT, Tween.EASE_OUT, 0.05)
 	$MarginContainer2/LevelSelectScreen/Tween.start()
 
+# Open the options menu
 func _on_Options_gui_input( ev ):
 	if (ev is InputEventMouseButton):
 		if (ev.pressed) and !menu_popped:
@@ -46,7 +51,7 @@ func _on_Options_gui_input( ev ):
 			$Player.stop()
 			$OptionsMenu.show()
 			menu_popped = true
-			
+# Exit
 func _on_Quit_gui_input( ev ):
 	if (ev is InputEventMouseButton):
 		if (ev.pressed):

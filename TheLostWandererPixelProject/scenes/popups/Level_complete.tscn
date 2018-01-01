@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/popups/Level_complete.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/popups/level_over.png" type="Texture" id=2]
@@ -19,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 
 resource_name = "buttons_flying_up"
 length = 0.7
@@ -62,9 +62,27 @@ tracks/2/keys = {
 "values": [ Vector2( 34.3299, 270 ), Vector2( 34.3299, 42 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=8]
 
-resource_name = "one_star"
+resource_name = "fade_below"
+length = 0.7
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("fading:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 500 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
 length = 0.5
 loop = false
 step = 0.1
@@ -79,6 +97,25 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "star_count_from_left"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame/Stars_Amount:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -450, -107 ), Vector2( -81, -107 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -124,9 +161,8 @@ tracks/2/keys = {
 "values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource_name = "two_stars"
 length = 0.9
 loop = false
 step = 0.1
@@ -174,6 +210,17 @@ tracks/0/keys = {
 "values": [ Vector2( 400, -160 ), Vector2( 400, 230 ) ]
 }
 
+[sub_resource type="Gradient" id=9]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+
+gradient = SubResource( 9 )
+width = 800
+_sections_unfolded = [ "Resource" ]
+
 [node name="Level_complete" type="Node2D" index="0"]
 
 position = Vector2( 400, -160 )
@@ -192,7 +239,7 @@ texture = ExtResource( 2 )
 [node name="star_1" type="Sprite" parent="Frame" index="0"]
 
 modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
-position = Vector2( -44, -5 )
+position = Vector2( -44, 5 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
@@ -202,7 +249,7 @@ __meta__ = {
 [node name="star_2" type="Sprite" parent="Frame" index="1"]
 
 modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
-position = Vector2( 1, -35 )
+position = Vector2( 1, -25 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
@@ -212,14 +259,14 @@ __meta__ = {
 [node name="star_3" type="Sprite" parent="Frame" index="2"]
 
 modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
-position = Vector2( 48, -5 )
+position = Vector2( 48, 5 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="Frame" index="3"]
+[node name="Title" type="Label" parent="Frame" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -246,7 +293,35 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="home" type="TouchScreenButton" parent="Frame" index="4"]
+[node name="Stars_Amount" type="Label" parent="Frame" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -450.0
+margin_top = -107.0
+margin_right = -285.0
+margin_bottom = -56.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0.394531, 0.298981, 0.298981, 1 )
+text = "STARS"
+align = 1
+valign = 2
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="home" type="TouchScreenButton" parent="Frame" index="5"]
 
 position = Vector2( -57, 270 )
 normal = ExtResource( 5 )
@@ -260,7 +335,7 @@ action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
-[node name="restart" type="TouchScreenButton" parent="Frame" index="5"]
+[node name="restart" type="TouchScreenButton" parent="Frame" index="6"]
 
 position = Vector2( -11, 270 )
 normal = ExtResource( 7 )
@@ -274,7 +349,7 @@ action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
-[node name="next" type="TouchScreenButton" parent="Frame" index="6"]
+[node name="next" type="TouchScreenButton" parent="Frame" index="7"]
 
 position = Vector2( 34, 270 )
 normal = ExtResource( 9 )
@@ -293,10 +368,12 @@ _sections_unfolded = [ "Transform" ]
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/buttons_flying_up = SubResource( 5 )
-anims/one_star = SubResource( 2 )
+anims/buttons_flying_up = SubResource( 2 )
+anims/fade_below = SubResource( 8 )
+anims/one_star = SubResource( 3 )
+anims/star_count_from_left = SubResource( 7 )
 anims/three_stars = SubResource( 4 )
-anims/two_stars = SubResource( 3 )
+anims/two_stars = SubResource( 5 )
 anims/window_frame_fly_down = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
@@ -304,15 +381,21 @@ blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
-[node name="todo find and play each sound for each star" type="AudioStreamPlayer2D" parent="." index="2"]
+[node name="todo find and play each sound for each star" type="Node" parent="." index="2"]
 
-stream = null
-volume_db = 0.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
+[node name="fading" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0, 500 )
+texture = SubResource( 10 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 400 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[connection signal="pressed" from="Frame/home" to="." method="_on_home_pressed"]
+
+[connection signal="pressed" from="Frame/restart" to="." method="_on_restart_pressed"]
+
+[connection signal="pressed" from="Frame/next" to="." method="_on_next_pressed"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

@@ -12,9 +12,10 @@ const MIN_JUMP = -40
 var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
-var key_picked_up = false
-var no_of_blue_gems = 0
-var no_lives = 3.0
+
+# items
+var no_lives
+var no_stars
 
 var anim=""
 
@@ -23,6 +24,9 @@ onready var sprite = $AnimatedSprite
 
 func _ready():
 	get_node("/root/global").connect("decrease_life", self, "hurt_player")
+	get_node("/root/global").connect("star_pickup", self, "increase_star")
+	no_lives = 3.0
+	no_stars = 0
 
 # global will emit signal when player has been hurt (indicated by spike instance script, etc)
 func hurt_player(amount):
@@ -30,6 +34,10 @@ func hurt_player(amount):
 		print("game_over")
 	no_lives -= amount
 
+func increase_star():
+	no_stars += 1
+
+# input
 func _physics_process(delta):
 	#increment counters
 	onair_time += delta
@@ -102,7 +110,7 @@ func prep_animation():
 	$AnimatedSprite.stop()
 	set_physics_process(false)
 
-#make visible again and active
+# make visible again and active
 func finish_animation():
 	show()
 	$Camera2D.current = true

@@ -1,8 +1,8 @@
 extends Node2D
 
 func _ready():
-	$CanvasLayer2/Level_complete.hide()
 	$level_endpoint.connect("end_point_reached", self, "game_over")
+	$CanvasLayer2/Level_complete.hide()
 	$Player.prep_animation()
 	$fade_node/fade_in_node/AnimationPlayer.play("fade")
 	$CanvasLayer/GUI.hide()
@@ -29,5 +29,6 @@ func game_over():
 	$CanvasLayer/GUI.set_process(false)
 	$fade_node/fade_in_node.visible = true
 	$fade_node/fade_in_node.modulate = Color(1, 1, 1, 0.2)
+	$CanvasLayer2/Level_complete.set_number_of_stars($Player.no_stars)
 	$CanvasLayer2/Level_complete.show()
 	$CanvasLayer2/Level_complete/AnimationPlayer.play("window_frame_fly_down")

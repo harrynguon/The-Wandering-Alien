@@ -4,6 +4,7 @@ signal decrease_life(amount)
 signal star_pickup
 
 var current_scene = null
+var current_level = 0
 
 func _ready():
 	OS.set_window_size(Vector2(800, 480)) # may have to delete if causing errors with mobile
@@ -15,6 +16,9 @@ func decrease_lives(no_lives):
 	
 func star_picked_up():
 	emit_signal("star_pickup")
+	
+func set_level(level):
+	current_level = level
 
 func goto_scene(path):
 
@@ -44,3 +48,4 @@ func _deferred_goto_scene(path):
 	
 	# optional, make it compatible with the SceneTree.change_scene() API
 	get_tree().set_current_scene(current_scene)
+	
