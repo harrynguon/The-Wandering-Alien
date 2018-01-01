@@ -1,9 +1,9 @@
 extends Sprite
 
-signal anim_finished
+signal fade_finished
 
 func _ready():
 	pass
 
 func _on_AnimationPlayer_animation_finished( name ):
-	emit_signal("anim_finished")
+	emit_signal("fade_finished")

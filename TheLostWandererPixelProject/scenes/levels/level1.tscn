@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/levels/level1.tmx" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/level1.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/bg/sky background.png" type="Texture" id=3]
 [ext_resource path="res://scenes/items/Star.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/util/fade_in_node.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/popups/Level_complete.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -60,7 +58,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="level1" instance=ExtResource( 1 )]
+[node name="level1" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
@@ -154,8 +152,6 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="fade_in_node" parent="fade_node" index="0" instance=ExtResource( 6 )]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
 
 layer = 1
@@ -163,13 +159,13 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 7 )]
+[node name="GUI" parent="CanvasLayer" index="0" instance=ExtResource( 6 )]
 
 [node name="Object Layer 1" parent="." index="9"]
 
 editor/display_folded = true
 
-[node name="level_endpoint" parent="." index="10" instance=ExtResource( 8 )]
+[node name="level_endpoint" parent="." index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 1248, 48 )
 
@@ -180,10 +176,6 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="Level_complete" parent="CanvasLayer2" index="0" instance=ExtResource( 9 )]
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-
-[connection signal="anim_finished" from="fade_node/fade_in_node" to="." method="_on_fade_in_node_anim_finished"]
 
 
