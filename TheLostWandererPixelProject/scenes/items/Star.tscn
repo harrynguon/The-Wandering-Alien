@@ -66,7 +66,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[node name="Star" type="Area2D" index="0"]
+[node name="Star" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -104,10 +104,10 @@ autoplay = ""
 
 [node name="Particles2D" type="Particles2D" parent="." index="3"]
 
-modulate = Color( 0.921875, 0.88924, 0.399719, 1 )
+modulate = Color( 0.902344, 0.874586, 0.458221, 1 )
 show_behind_parent = true
 emitting = true
-amount = 5
+amount = 6
 lifetime = 0.8
 one_shot = false
 preprocess = 1.0
