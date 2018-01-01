@@ -1,39 +1,222 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/art/popups/level_over.png" type="Texture" id=1]
-[ext_resource path="res://assets/art/popups/star_big.png" type="Texture" id=2]
-[ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scripts/popups/Level_complete.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/popups/level_over.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/popups/star_big.png" type="Texture" id=3]
+[ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/art/popups/home.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/popups/home_pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/popups/replay.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/popups/replay_pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/popups/next.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/popups/next_pressed.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 30
+size = 24
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Font/fallback", "Settings" ]
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "buttons_flying_up"
+length = 0.7
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame/home:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -57.6566, 270 ), Vector2( -57.6566, 42 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frame/restart:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.8834, 270 ), Vector2( -11.8834, 42 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Frame/next:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34.3299, 270 ), Vector2( 34.3299, 42 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "one_star"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame/star_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "three_stars"
+length = 1.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame/star_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frame/star_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Frame/star_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "two_stars"
+length = 0.9
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Frame/star_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Frame/star_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "window_frame_fly_down"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, -113 ), Vector2( 400, 230 ) ]
+}
 
 [node name="Level_complete" type="Node2D" index="0"]
 
-position = Vector2( 442.086, 213.987 )
+position = Vector2( 400, -113 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Frame" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="star_1" type="Sprite" parent="Frame" index="0"]
 
-position = Vector2( -42.3014, -6.09425 )
-texture = ExtResource( 2 )
+modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+position = Vector2( -44, -5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="star_2" type="Sprite" parent="Frame" index="1"]
 
-position = Vector2( 2.86789, -34.0562 )
-texture = ExtResource( 2 )
+modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+position = Vector2( 1, -35 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="star_3" type="Sprite" parent="Frame" index="2"]
 
-position = Vector2( 49.1126, -5.73576 )
-texture = ExtResource( 2 )
+modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+position = Vector2( 48, -5 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="Frame" index="3"]
 
@@ -42,7 +225,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -81.0
-margin_top = -80.0
+margin_top = -107.0
 margin_right = 84.0
 margin_bottom = -56.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -51,10 +234,85 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.394531, 0.298981, 0.298981, 1 )
-text = "CONGRATULATIONS"
+text = "WELL DONE!"
+align = 1
+uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="home" type="TouchScreenButton" parent="Frame" index="4"]
+
+position = Vector2( -57, 270 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="restart" type="TouchScreenButton" parent="Frame" index="5"]
+
+position = Vector2( -11, 270 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 8 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="next" type="TouchScreenButton" parent="Frame" index="6"]
+
+position = Vector2( 34, 270 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/buttons_flying_up = SubResource( 5 )
+anims/one_star = SubResource( 2 )
+anims/three_stars = SubResource( 4 )
+anims/two_stars = SubResource( 3 )
+anims/window_frame_fly_down = SubResource( 6 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+_sections_unfolded = [ "Pause", "Playback Options" ]
+
+[node name="todo find and play each sound for each star" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 
