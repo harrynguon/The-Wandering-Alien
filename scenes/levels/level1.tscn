@@ -129,7 +129,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Star" parent="BaseLevel/Stars" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( 608, 240 )
+position = Vector2( 480, 240 )
 
 [node name="Star2" parent="BaseLevel/Stars" index="1" instance=ExtResource( 6 )]
 
