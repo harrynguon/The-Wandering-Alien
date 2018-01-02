@@ -230,6 +230,13 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
 [connection signal="gui_input" from="MarginContainer/H/V/MenuOptions/Play" to="." method="_on_Play_gui_input"]
 
 [connection signal="gui_input" from="MarginContainer/H/V/MenuOptions/Quit" to="." method="_on_Quit_gui_input"]

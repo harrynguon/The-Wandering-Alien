@@ -1,6 +1,6 @@
 extends Node2D
 
-const LAST_LEVEL = 1
+const LAST_LEVEL = 9
 
 var number_of_stars
 
@@ -66,8 +66,14 @@ func _on_home_pressed():
 
 # Restart the level
 func _on_restart_pressed():
+	var fade_out_instance = load("res://scenes/util/fade_out_node.tscn").instance()
+	fade_out_instance.connect("anim_finished", self, "restart_game")
+	$CanvasLayer.add_child(fade_out_instance)
+	fade_out_instance.play("fade")
+
+func restart_game():
 	get_node("/root/global").goto_scene("res://scenes/levels/level%s.tscn" % \
-			get_node("/root/global").current_level)
+		get_node("/root/global").current_level, true)
 
 # Advances forward to the next level
 func _on_next_pressed():

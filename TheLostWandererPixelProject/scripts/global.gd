@@ -20,7 +20,10 @@ func star_picked_up():
 func set_level(level):
 	current_level = level
 
-func goto_scene(path):
+# path -> the path to the scene to be loaded
+# play_anim -> whether or not the starting cutscene for
+# the level should be played or not
+func goto_scene(path, dont_play_anim=null):
 
     # This function will usually be called from a signal callback,
     # or some other function from the running scene.
@@ -30,10 +33,9 @@ func goto_scene(path):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
-
-    call_deferred("_deferred_goto_scene",path)
+	call_deferred("_deferred_goto_scene",path, dont_play_anim)
 	
-func _deferred_goto_scene(path):
+func _deferred_goto_scene(path, dont_play_anim):
 	# Immediately free the current scene, there is no risk here
 	current_scene.free()
 	
@@ -43,9 +45,15 @@ func _deferred_goto_scene(path):
 	# Instance the new scene
 	current_scene = s.instance()
 	
+	
+	
 	# Add it to the active scene, as child of root
 	get_tree().get_root().add_child(current_scene)
 	
 	# optional, make it compatible with the SceneTree.change_scene() API
 	get_tree().set_current_scene(current_scene)
+	
+	# The user has restarted the level, so dont play the animation
+	if dont_play_anim:
+		current_scene.set_dont_play_anim(true)
 	
