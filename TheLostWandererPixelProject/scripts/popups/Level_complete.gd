@@ -73,7 +73,7 @@ func _on_restart_pressed():
 
 func restart_game():
 	get_node("/root/global").goto_scene("res://scenes/levels/level%s.tscn" % \
-		get_node("/root/global").current_level, true)
+			get_node("/root/global").current_level, true)
 
 # Advances forward to the next level
 func _on_next_pressed():

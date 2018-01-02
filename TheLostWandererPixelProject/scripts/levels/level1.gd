@@ -37,10 +37,12 @@ func on_fade_in_node_anim_finished():
 # Make the player unable to move, hide the controls, and animate the
 # level over popup window
 func game_over():
+
 	$Player.set_physics_process(false)
 	$Player/AnimatedSprite.stop()
 	$CanvasLayer/GUI.hide()
 	$CanvasLayer/GUI.set_process(false)
+	$fade_in_node/CanvasLayer.layer = 1
 	$fade_in_node/CanvasLayer/black_background.visible = true
 	$fade_in_node/CanvasLayer/black_background.modulate = Color(1, 1, 1, 0.2)
 	# create an instance of the level complete scene when needed, instead of having
