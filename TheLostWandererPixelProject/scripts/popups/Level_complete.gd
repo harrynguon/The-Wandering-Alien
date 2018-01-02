@@ -42,7 +42,7 @@ func _on_AnimationPlayer_animation_finished( name ):
 		$AnimationPlayer.play("buttons_flying_up")
 	# user pressed home button and fade anim has finished
 	elif name == "fade_below":
-		get_node("/root/global").goto_scene("res://scenes/MainMenu.tscn")
+		get_node("/root/global").goto_scene("res://scenes/MainMenu.tscn", true)
 
 func set_number_of_stars(amount):
 	number_of_stars = amount

@@ -14,7 +14,7 @@ func _ready():
 	add_child(fade_in_instance)
 	$fade_in_node.play("fade")
 	
-func set_dont_play_anim(result):
+func set_anim(result):
 	dont_play_anim = result
 	
 func _on_AnimationPlayer_animation_finished( name ):
@@ -42,7 +42,7 @@ func game_over():
 	$Player/AnimatedSprite.stop()
 	$CanvasLayer/GUI.hide()
 	$CanvasLayer/GUI.set_process(false)
-	$fade_in_node/CanvasLayer.layer = 1
+	$fade_in_node/CanvasLayer.layer = 1 # do not overlap on top of the whole screen
 	$fade_in_node/CanvasLayer/black_background.visible = true
 	$fade_in_node/CanvasLayer/black_background.modulate = Color(1, 1, 1, 0.2)
 	# create an instance of the level complete scene when needed, instead of having

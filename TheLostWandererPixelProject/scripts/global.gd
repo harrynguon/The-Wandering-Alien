@@ -55,5 +55,5 @@ func _deferred_goto_scene(path, dont_play_anim):
 	
 	# The user has restarted the level, so dont play the animation
 	if dont_play_anim:
-		current_scene.set_dont_play_anim(true)
+		current_scene.set_anim(true)
 	

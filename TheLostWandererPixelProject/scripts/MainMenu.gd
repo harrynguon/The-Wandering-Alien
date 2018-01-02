@@ -12,9 +12,8 @@ func _ready():
 	timer = 0.0
 	$Player.play("default")
 	
-func fade_in():
-	$CanvasLayer.add_child(load("res://scripts/util/fade_in_node.gd").instance())
-	$CanvasLayer/fade_in_node/AnimationPlayer.play("fade")
+func set_anim(result):
+	add_child(load("res://scenes/util/slide.tscn").instance())
 
 # For: Options menu to not allow instantaneous options menu opening+closing at the
 # same time
