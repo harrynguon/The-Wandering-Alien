@@ -14,6 +14,7 @@ func _ready():
 	
 func set_anim(result):
 	add_child(load("res://scenes/util/slide.tscn").instance())
+	$slide/AnimationPlayer.play("slide_down")
 
 # For: Options menu to not allow instantaneous options menu opening+closing at the
 # same time

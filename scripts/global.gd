@@ -45,8 +45,6 @@ func _deferred_goto_scene(path, dont_play_anim):
 	# Instance the new scene
 	current_scene = s.instance()
 	
-	
-	
 	# Add it to the active scene, as child of root
 	get_tree().get_root().add_child(current_scene)
 	

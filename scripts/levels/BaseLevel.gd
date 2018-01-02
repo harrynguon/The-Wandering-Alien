@@ -3,6 +3,7 @@ extends Node2D
 var dont_play_anim = false
 
 func _ready():
+	$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	$level_endpoint.connect("end_point_reached", self, "game_over")
 	$Player.prep_animation()
 	# hide gui
@@ -18,8 +19,8 @@ func set_anim(result):
 	dont_play_anim = result
 	
 func _on_AnimationPlayer_animation_finished( name ):
-	if name == "camera move":
-		$AnimationPlayer/Camera2D.current = false
+	if name == "cutscene":
+		$AnimationPlayer/CameraMovementCutscene.current = false
 		$Player.finish_animation()
 		$CanvasLayer/GUI.show()
 		$CanvasLayer/GUI.set_process(true)
@@ -28,11 +29,12 @@ func on_fade_in_node_anim_finished():
 	# dont play the camera move animation and just go straight into
 	# gameplay
 	if dont_play_anim:
-		_on_AnimationPlayer_animation_finished("camera move")
+		_on_AnimationPlayer_animation_finished("cutscene")
 	else:
+#		_on_AnimationPlayer_animation_finished("cutscene")
 		$Player/Camera2D.current = false
-		$AnimationPlayer/Camera2D.current = true
-		$AnimationPlayer.play("camera move")
+		$AnimationPlayer/CameraMovementCutscene.current = true
+		$AnimationPlayer.play("cutscene")
 
 # Make the player unable to move, hide the controls, and animate the
 # level over popup window

@@ -7,6 +7,7 @@ var going_up
 func _ready():
 	active = true
 	going_up = false
+	connect("body_entered", self, "_on_Star_body_entered")
 	$Tween.interpolate_property($Sprite, "position", $Sprite.position,\
 			$Sprite.position + Vector2(0.0, 1), 0.3, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()

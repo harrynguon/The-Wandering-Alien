@@ -75,7 +75,7 @@ anims/slide_up = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = "slide_down"
+autoplay = ""
 _sections_unfolded = [ "playback" ]
 
 

@@ -68,6 +68,7 @@ func _on_home_pressed():
 func _on_restart_pressed():
 	var fade_out_instance = load("res://scenes/util/fade_out_node.tscn").instance()
 	fade_out_instance.connect("anim_finished", self, "restart_game")
+	$Frame.hide()
 	$CanvasLayer.add_child(fade_out_instance)
 	fade_out_instance.play("fade")
 
