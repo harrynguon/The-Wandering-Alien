@@ -1,0 +1,17 @@
+[remap]
+
+importer="org.vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/level2.tmx-b1317be41800fb821ece7d4059a380b3.scn"
+
+[deps]
+
+source_md5="2ca8971253cb8e4a305f4896c63f0c0c"
+
+[params]
+
+post_script=""
+custom_properties=true
+bundle_tilesets=false
+save_tilesets=true
+tileset_directory="res://.import/tilesets/"
