@@ -1,0 +1,486 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/art/level_select/level_select_border.png" type="Texture" id=1]
+[ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/art/level_select/button_lvlsel.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/level_select/star_button_hidden.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 42
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[node name="LevelSelectTest" type="Node2D" index="0"]
+
+[node name="Border" type="Sprite" parent="." index="0"]
+
+position = Vector2( 400, 240 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Title" type="Label" parent="Border" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -90.0
+margin_top = -130.0
+margin_right = 105.0
+margin_bottom = -46.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Select Level"
+autowrap = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Levels" type="Node2D" parent="Border" index="1"]
+
+editor/display_folded = true
+position = Vector2( 0, -10 )
+scale = Vector2( 1.6, 1.6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level1" type="TouchScreenButton" parent="Border/Levels" index="0"]
+
+position = Vector2( -115, -30 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level1" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level1" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level1" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level2" type="TouchScreenButton" parent="Border/Levels" index="1"]
+
+position = Vector2( -55, -30 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "2"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level2" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level2" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level2" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level3" type="TouchScreenButton" parent="Border/Levels" index="2"]
+
+position = Vector2( 5, -30 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "3"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level3" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level3" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level3" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level4" type="TouchScreenButton" parent="Border/Levels" index="3"]
+
+position = Vector2( 65, -30 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "4"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level4" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level4" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level4" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level5" type="TouchScreenButton" parent="Border/Levels" index="4"]
+
+position = Vector2( -115, 20 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level5" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "5"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level5" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level5" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level5" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level6" type="TouchScreenButton" parent="Border/Levels" index="5"]
+
+position = Vector2( -55, 20 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level6" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "6"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level6" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level6" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level6" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level7" type="TouchScreenButton" parent="Border/Levels" index="6"]
+
+position = Vector2( 5, 20 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level7" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "7"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level7" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level7" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level7" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="level8" type="TouchScreenButton" parent="Border/Levels" index="7"]
+
+position = Vector2( 65, 20 )
+normal = ExtResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[node name="LevelNumber" type="Label" parent="Border/Levels/level8" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 28.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+text = "8"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transform", "custom_fonts" ]
+
+[node name="Star_1" type="Sprite" parent="Border/Levels/level8" index="1"]
+
+position = Vector2( 11, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_2" type="Sprite" parent="Border/Levels/level8" index="2"]
+
+position = Vector2( 24, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Star_3" type="Sprite" parent="Border/Levels/level8" index="3"]
+
+position = Vector2( 37, 25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+
