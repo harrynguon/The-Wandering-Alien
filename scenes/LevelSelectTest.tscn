@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/art/level_select/level_select_border.png" type="Texture" id=1]
 [ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/art/level_select/button_lvlsel.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/level_select/star_button_hidden.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/level_select/lock.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/level_select/button_normal (9).png" type="Texture" id=6]
+[ext_resource path="res://assets/art/level_select/button_pressed (7).png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -28,6 +31,9 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 position = Vector2( 400, 240 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Title" type="Label" parent="Border" index="0"]
 
@@ -51,13 +57,18 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Levels" type="Node2D" parent="Border" index="1"]
 
-editor/display_folded = true
 position = Vector2( 0, -10 )
 scale = Vector2( 1.6, 1.6 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="level1" type="TouchScreenButton" parent="Border/Levels" index="0"]
 
@@ -163,6 +174,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 37, 25 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="lock" type="Sprite" parent="Border/Levels/level2" index="4"]
+
+position = Vector2( 24, 10 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level3" type="TouchScreenButton" parent="Border/Levels" index="2"]
@@ -481,6 +498,20 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 37, 25 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Back_Button" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 0, 420 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 7 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
 
 
