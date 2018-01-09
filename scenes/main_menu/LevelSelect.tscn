@@ -25,7 +25,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="LevelSelect" type="Node2D" index="0"]
+[node name="LevelSelect" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -75,6 +75,7 @@ __meta__ = {
 
 [node name="level1" type="TouchScreenButton" parent="Border/Levels" index="0"]
 
+editor/display_folded = true
 position = Vector2( -115, -30 )
 normal = ExtResource( 4 )
 pressed = null
@@ -128,6 +129,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level2" type="TouchScreenButton" parent="Border/Levels" index="1"]
 
+editor/display_folded = true
 position = Vector2( -55, -30 )
 normal = ExtResource( 4 )
 pressed = null
@@ -187,6 +189,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level3" type="TouchScreenButton" parent="Border/Levels" index="2"]
 
+editor/display_folded = true
 position = Vector2( 5, -30 )
 normal = ExtResource( 4 )
 pressed = null
@@ -247,6 +250,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level4" type="TouchScreenButton" parent="Border/Levels" index="3"]
 
+editor/display_folded = true
 position = Vector2( 65, -30 )
 normal = ExtResource( 4 )
 pressed = null
@@ -307,6 +311,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level5" type="TouchScreenButton" parent="Border/Levels" index="4"]
 
+editor/display_folded = true
 position = Vector2( -115, 20 )
 normal = ExtResource( 4 )
 pressed = null
@@ -367,6 +372,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level6" type="TouchScreenButton" parent="Border/Levels" index="5"]
 
+editor/display_folded = true
 position = Vector2( -55, 20 )
 normal = ExtResource( 4 )
 pressed = null
@@ -427,6 +433,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level7" type="TouchScreenButton" parent="Border/Levels" index="6"]
 
+editor/display_folded = true
 position = Vector2( 5, 20 )
 normal = ExtResource( 4 )
 pressed = null
@@ -487,6 +494,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level8" type="TouchScreenButton" parent="Border/Levels" index="7"]
 
+editor/display_folded = true
 position = Vector2( 65, 20 )
 normal = ExtResource( 4 )
 pressed = null

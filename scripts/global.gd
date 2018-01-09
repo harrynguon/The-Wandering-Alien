@@ -6,6 +6,12 @@ signal star_pickup
 var current_scene = null
 var current_level = 0
 
+
+# TODO: Upon completing a level, check number of stars and see if the number of stars
+# is greater than the current number of stars. If so, update it, otherwise don't.
+# and then in mainmenu.gd, everytime it is instanced, update the corresponding
+# level with its number of stars achieved. Also unlock the level if stars >= 1 or
+# it is the next level available.
 func _ready():
 	OS.set_window_size(Vector2(800, 480)) # may have to delete if causing errors with mobile
 	var root = get_tree().get_root()
