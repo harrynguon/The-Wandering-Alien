@@ -1,11 +1,17 @@
 extends Node2D
 
 var level_selected = 0
+var levels_star_count = get_node("/root/global").levels_star_count
 
 func _ready():
 	$Elements/Play.connect("pressed", self, "play_btn_pressed")
 	$LevelSelectNode/LevelSelect/Back_Button.connect("pressed", self, "back_btn_pressed")
 	connect_levels()
+	update_star_counts()
+	
+func update_star_counts():
+	# TODO: get all star counts and update for the level select screen
+	pass
 	
 func set_anim(result):
 	var slide_instance = load("res://scenes/util/slide.tscn").instance()

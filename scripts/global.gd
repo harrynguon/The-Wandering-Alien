@@ -6,6 +6,26 @@ signal star_pickup
 var current_scene = null
 var current_level = 0
 
+# dictionary syntax
+#var d = { "name": "john", "age": 22 } # simple syntax
+#print("Name: ", d["name"], " Age: ", d["age"])
+
+var levels_star_count = {
+	"level1": 0,
+	"level2": 0,
+	"level3": 0,
+	"level4": 0,
+	"level5": 0,
+	"level6": 0,
+	"level7": 0,
+	"level8": 0,
+}
+
+# params: String, Integer
+func set_star_count(level_name, star_count):
+	if star_count > levels_star_count[level_name]:
+		levels_star_count[level_name] = star_count
+
 
 # TODO: Upon completing a level, check number of stars and see if the number of stars
 # is greater than the current number of stars. If so, update it, otherwise don't.
