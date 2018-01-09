@@ -3,6 +3,7 @@ extends Node2D
 var level_selected = 0
 
 func _ready():
+	get_node("/root/global").load_game()
 	$Elements/Play.connect("pressed", self, "play_btn_pressed")
 	$Elements/Quit.connect("pressed", self, "quit_btn_pressed")
 	$LevelSelectNode/LevelSelect/Back_Button.connect("pressed", self, "back_btn_pressed")

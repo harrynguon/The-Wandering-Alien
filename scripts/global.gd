@@ -21,6 +21,22 @@ var levels_star_count = {
 	"level8": 0,
 }
 
+func save_game():
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	save_game.store_line(to_json(levels_star_count))
+	save_game.close()
+	
+func load_game():
+	var save_game = File.new()
+	if !save_game.file_exists("user://savegame.save"):
+		return # no save to load (error)
+	save_game.open("user://savegame.save", File.READ)
+	var save_data = {}
+	save_data = parse_json(save_game.get_as_text())
+	save_game.close()
+	levels_star_count = save_data
+
 # params: String, Integer
 func set_star_count(level_name, star_count):
 	if star_count > levels_star_count[level_name]:

@@ -53,6 +53,8 @@ func set_number_of_stars(amount):
 	var existing_star_amount = global_node.get_level_star_count()[current_level]
 	if number_of_stars > existing_star_amount:
 		global_node.get_level_star_count()[current_level] = number_of_stars
+		get_node("/root/global").save_game()
+	
 	
 func hide_buttons():
 	$Frame/home.hide()
