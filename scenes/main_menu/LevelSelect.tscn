@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/main_menu/LevelSelect.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/level_select/level_select_border.png" type="Texture" id=2]
 [ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/art/level_select/button_lvlsel.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/level_select/star_button_hidden.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/level_select/lock.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/level_select/button_normal (9).png" type="Texture" id=7]
-[ext_resource path="res://assets/art/level_select/button_pressed (7).png" type="Texture" id=8]
+[ext_resource path="res://assets/art/level_select/button_lvlsel_dark.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/level_select/star_button_hidden.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/level_select/lock.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/level_select/button_normal (9).png" type="Texture" id=8]
+[ext_resource path="res://assets/art/level_select/button_pressed (7).png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -25,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="LevelSelect" type="Node2D"]
+[node name="LevelSelect" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -77,7 +78,7 @@ __meta__ = {
 
 position = Vector2( -115, -30 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -111,19 +112,19 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level1" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level1" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level1" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level2" type="TouchScreenButton" parent="Border/Levels" index="1"]
@@ -131,7 +132,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( -55, -30 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -165,25 +166,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level2" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level2" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level2" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level2" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level3" type="TouchScreenButton" parent="Border/Levels" index="2"]
@@ -191,7 +192,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 5, -30 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -225,25 +226,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level3" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level3" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level3" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level3" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level4" type="TouchScreenButton" parent="Border/Levels" index="3"]
@@ -251,7 +252,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 65, -30 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -285,25 +286,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level4" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level4" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level4" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level4" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level5" type="TouchScreenButton" parent="Border/Levels" index="4"]
@@ -311,7 +312,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( -115, 20 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -345,25 +346,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level5" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level5" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level5" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level5" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level6" type="TouchScreenButton" parent="Border/Levels" index="5"]
@@ -371,7 +372,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( -55, 20 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -405,25 +406,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level6" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level6" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level6" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level6" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level7" type="TouchScreenButton" parent="Border/Levels" index="6"]
@@ -431,7 +432,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 5, 20 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -465,25 +466,25 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level7" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level7" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level7" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level7" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level8" type="TouchScreenButton" parent="Border/Levels" index="7"]
@@ -491,7 +492,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 65, 20 )
 normal = ExtResource( 4 )
-pressed = null
+pressed = ExtResource( 5 )
 bitmask = null
 shape = null
 shape_centered = true
@@ -525,32 +526,32 @@ _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Transfor
 [node name="Star_1" type="Sprite" parent="Border/Levels/level8" index="1"]
 
 position = Vector2( 11, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_2" type="Sprite" parent="Border/Levels/level8" index="2"]
 
 position = Vector2( 24, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Star_3" type="Sprite" parent="Border/Levels/level8" index="3"]
 
 position = Vector2( 37, 25 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="lock" type="Sprite" parent="Border/Levels/level8" index="4"]
 
 position = Vector2( 24, 10 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Back_Button" type="TouchScreenButton" parent="." index="1"]
 
 position = Vector2( 0, 420 )
-normal = ExtResource( 7 )
-pressed = ExtResource( 8 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 9 )
 bitmask = null
 shape = null
 shape_centered = true
