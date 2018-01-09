@@ -5,7 +5,7 @@ const LAST_LEVEL = 9
 var number_of_stars
 
 func _ready():
-	number_of_stars = 3
+	number_of_stars = 0
 	hide_buttons()
 	$Frame/Stars_Amount.hide()
 	$fading.hide()
@@ -46,6 +46,13 @@ func _on_AnimationPlayer_animation_finished( name ):
 
 func set_number_of_stars(amount):
 	number_of_stars = amount
+	# update star count in global.gd dictionary
+	var global_node = get_node("/root/global")
+	var current_level_number = global_node.current_level
+	var current_level = "level"+str(current_level_number)
+	var existing_star_amount = global_node.get_level_star_count()[current_level]
+	if number_of_stars > existing_star_amount:
+		global_node.get_level_star_count()[current_level] = number_of_stars
 	
 func hide_buttons():
 	$Frame/home.hide()

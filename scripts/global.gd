@@ -80,4 +80,7 @@ func _deferred_goto_scene(path, dont_play_anim):
 	# The user has restarted the level, so dont play the animation
 	if dont_play_anim:
 		current_scene.set_anim(true)
+		
+func get_level_star_count():
+	return levels_star_count
 	

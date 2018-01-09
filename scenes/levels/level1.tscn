@@ -141,7 +141,7 @@ position = Vector2( 1104, 64 )
 
 [node name="Player" parent="BaseLevel" index="5" instance=ExtResource( 7 )]
 
-position = Vector2( 100, 200 )
+position = Vector2( 100, 150 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="level_endpoint" parent="BaseLevel" index="6" instance=ExtResource( 8 )]

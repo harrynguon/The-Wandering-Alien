@@ -75,7 +75,6 @@ __meta__ = {
 
 [node name="level1" type="TouchScreenButton" parent="Border/Levels" index="0"]
 
-editor/display_folded = true
 position = Vector2( -115, -30 )
 normal = ExtResource( 4 )
 pressed = null
@@ -244,7 +243,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level3" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -305,7 +303,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level4" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -366,7 +363,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level5" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -427,7 +423,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level6" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -488,7 +483,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level7" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -549,7 +543,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="lock" type="Sprite" parent="Border/Levels/level8" index="4"]
 
 position = Vector2( 24, 10 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
