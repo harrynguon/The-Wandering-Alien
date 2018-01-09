@@ -21,17 +21,14 @@ func set_anim(result):
 	slide_instance.play_slide_down()
 
 func connect_levels():
-	$LevelSelectNode/LevelSelect/Border/Levels/level1.connect("pressed", self, "level_1_pressed")
-	# TODO:
-	# check global variables and lock accordingly depending on which one has been completed
-	# or not. 
-	$LevelSelectNode/LevelSelect.lock_level(2)
-	$LevelSelectNode/LevelSelect.lock_level(3)
-	$LevelSelectNode/LevelSelect.lock_level(4)
-	$LevelSelectNode/LevelSelect.lock_level(5)
-	$LevelSelectNode/LevelSelect.lock_level(6)
-	$LevelSelectNode/LevelSelect.lock_level(7)
-	$LevelSelectNode/LevelSelect.lock_level(8)
+	$LevelSelectNode/LevelSelect/Border/Levels/level1.connect("pressed", self, "level_1_pressed") 
+	var levels_star_count = get_node("/root/global").get_level_star_count()
+	for i in range(2, (levels_star_count.size()/2) + 1):
+		var key = "level"+str(i)+"unlocked"
+		if levels_star_count[key] == false:
+			$LevelSelectNode/LevelSelect.lock_level(i)
+		else:
+			$LevelSelectNode/LevelSelect.unlock_level(i)
 	
 func play_btn_pressed():
 	$AnimationPlayer.play("move_right")

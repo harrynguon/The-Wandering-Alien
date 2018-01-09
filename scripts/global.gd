@@ -11,14 +11,14 @@ var current_level = 0
 #print("Name: ", d["name"], " Age: ", d["age"])
 
 var levels_star_count = {
-	"level1": 0,
-	"level2": 0,
-	"level3": 0,
-	"level4": 0,
-	"level5": 0,
-	"level6": 0,
-	"level7": 0,
-	"level8": 0,
+	"level1": -1, "level1unlocked": true,
+	"level2": -1, "level2unlocked": false,
+	"level3": -1, "level3unlocked": false,
+	"level4": -1, "level4unlocked": false,
+	"level5": -1, "level5unlocked": false,
+	"level6": -1, "level6unlocked": false,
+	"level7": -1, "level7unlocked": false,
+	"level8": -1, "level8unlocked": false,
 }
 
 func save_game():
@@ -49,7 +49,6 @@ func set_star_count(level_name, star_count):
 # level with its number of stars achieved. Also unlock the level if stars >= 1 or
 # it is the next level available.
 func _ready():
-	OS.set_window_size(Vector2(800, 480)) # may have to delete if causing errors with mobile
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() - 1)
 	

@@ -129,7 +129,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level2" type="TouchScreenButton" parent="Border/Levels" index="1"]
 
-editor/display_folded = true
 position = Vector2( -55, -30 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 5 )

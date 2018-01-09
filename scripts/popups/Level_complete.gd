@@ -1,6 +1,6 @@
 extends Node2D
 
-const LAST_LEVEL = 9
+const LAST_LEVEL = 8
 
 var number_of_stars
 
@@ -50,11 +50,19 @@ func set_number_of_stars(amount):
 	var global_node = get_node("/root/global")
 	var current_level_number = global_node.current_level
 	var current_level = "level"+str(current_level_number)
+	var current_levelplusone = "level"+str(current_level_number+1)
 	var existing_star_amount = global_node.get_level_star_count()[current_level]
+	# save game if stars achieved > current. Default is -1
 	if number_of_stars > existing_star_amount:
 		global_node.get_level_star_count()[current_level] = number_of_stars
+		print("Number of stars achieved is greater than the existing. Good job.")
+		# check if next level has been unlocked already or not
+		if current_level_number < LAST_LEVEL:
+			if global_node.get_level_star_count()[current_levelplusone+"unlocked"] == false:
+				global_node.get_level_star_count()[current_levelplusone+"unlocked"] = true
+				print("The next level has been unlocked.")
 		get_node("/root/global").save_game()
-	
+		print("The game has been saved.")	
 	
 func hide_buttons():
 	$Frame/home.hide()
