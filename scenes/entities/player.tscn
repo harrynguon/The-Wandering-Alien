@@ -100,7 +100,7 @@ _sections_unfolded = [ "Smoothing" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = null
-volume_db = -15.0
+volume_db = -20.0
 autoplay = false
 mix_target = 0
 bus = "Master"

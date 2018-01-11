@@ -26,6 +26,7 @@ func _on_AnimationPlayer_animation_finished( name ):
 		$CanvasLayer/GUI.set_process(true)
 
 func on_fade_in_node_anim_finished():
+	$Music.play()
 	# dont play the camera move animation and just go straight into
 	# gameplay
 	if dont_play_anim:

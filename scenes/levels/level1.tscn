@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/levels/level1.tmx" type="PackedScene" id=1]
 [ext_resource path="res://scripts/levels/level1.gd" type="Script" id=2]
 [ext_resource path="res://scripts/levels/BaseLevel.gd" type="Script" id=3]
-[ext_resource path="res://assets/art/bg/sky background.png" type="Texture" id=4]
-[ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/items/Star.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/music/level_1/Worldmap-Theme.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/art/bg/sky background.png" type="Texture" id=5]
+[ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/items/Star.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -76,7 +77,15 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="BaseLevel" index="1"]
+[node name="Music" type="AudioStreamPlayer" parent="BaseLevel" index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BaseLevel" index="2"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -103,48 +112,48 @@ __meta__ = {
 [node name="background" type="Sprite" parent="BaseLevel/ParallaxBackground/ParallaxLayer" index="0"]
 
 scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="BaseLevel" index="2"]
+[node name="CanvasLayer" type="CanvasLayer" parent="BaseLevel" index="3"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="GUI" parent="BaseLevel/CanvasLayer" index="0" instance=ExtResource( 5 )]
+[node name="GUI" parent="BaseLevel/CanvasLayer" index="0" instance=ExtResource( 6 )]
 
-[node name="Popup" type="CanvasLayer" parent="BaseLevel" index="3"]
+[node name="Popup" type="CanvasLayer" parent="BaseLevel" index="4"]
 
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="Stars" type="Node2D" parent="BaseLevel" index="4"]
+[node name="Stars" type="Node2D" parent="BaseLevel" index="5"]
 
-[node name="Star" parent="BaseLevel/Stars" index="0" instance=ExtResource( 6 )]
+[node name="Star" parent="BaseLevel/Stars" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 480, 240 )
 
-[node name="Star2" parent="BaseLevel/Stars" index="1" instance=ExtResource( 6 )]
+[node name="Star2" parent="BaseLevel/Stars" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1024, 240 )
 
-[node name="Star3" parent="BaseLevel/Stars" index="2" instance=ExtResource( 6 )]
+[node name="Star3" parent="BaseLevel/Stars" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1104, 64 )
 
-[node name="Player" parent="BaseLevel" index="5" instance=ExtResource( 7 )]
+[node name="Player" parent="BaseLevel" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 100, 150 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="level_endpoint" parent="BaseLevel" index="6" instance=ExtResource( 8 )]
+[node name="level_endpoint" parent="BaseLevel" index="7" instance=ExtResource( 9 )]
 
 position = Vector2( 1255.21, 47.8694 )
 
