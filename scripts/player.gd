@@ -13,6 +13,9 @@ var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
 
+var move_sound
+var jump_sound = preload("res://assets/sound_effects/player/sfx_movement_jump1.wav")
+
 # items
 var no_lives
 var no_stars
@@ -84,6 +87,8 @@ func _physics_process(delta):
 	# Jumping
 	if on_floor and Input.is_action_just_pressed("ui_up"):
 		linear_vel.y = -JUMP_SPEED
+		$AudioStreamPlayer.stream = jump_sound
+		$AudioStreamPlayer.play()
 	if !on_floor and !Input.is_action_pressed("ui_up"):
 		if linear_vel.y < MIN_JUMP:
 			linear_vel.y = MIN_JUMP

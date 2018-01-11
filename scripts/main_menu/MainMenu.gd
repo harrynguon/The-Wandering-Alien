@@ -45,6 +45,7 @@ func play_level():
 	
 func level_1_pressed():
 	level_selected = 1
+	$ButtonsSoundPlayer.play()
 	fade_out()
 	
 func fade_out():

@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/enchanted-tiki-86.ogg-ee27d06f30d9538b5d158a747acd81d3.oggstr"
+
+[deps]
+
+source_md5="4aa52e5d449e295681b4fc2f4f6ed41e"
+
+[params]
+
+loop=true
+loop_offset=0
