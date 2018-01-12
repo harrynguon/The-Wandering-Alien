@@ -219,7 +219,7 @@ gradient = SubResource( 9 )
 width = 800
 _sections_unfolded = [ "Resource" ]
 
-[node name="Level_complete" type="Node2D"]
+[node name="Level_complete" type="Node2D" index="0"]
 
 position = Vector2( 400, -160 )
 scale = Vector2( 1.5, 1.5 )
@@ -395,6 +395,21 @@ layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="pressed" from="Frame/home" to="." method="_on_home_pressed"]
 

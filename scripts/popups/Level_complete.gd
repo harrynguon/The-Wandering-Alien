@@ -2,6 +2,7 @@ extends Node2D
 
 const LAST_LEVEL = 8
 
+var swish_sounds = preload("res://assets/sound_effects/level_complete_popup/swish-1.wav")
 var number_of_stars
 
 func _ready():
