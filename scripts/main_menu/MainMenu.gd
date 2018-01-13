@@ -24,6 +24,7 @@ func set_anim(result):
 
 func connect_levels():
 	$LevelSelectNode/LevelSelect/Border/Levels/level1.connect("pressed", self, "level_1_pressed") 
+	$LevelSelectNode/LevelSelect/Border/Levels/level2.connect("pressed", self, "level_2_pressed") 
 	var levels_star_count = get_node("/root/global").get_level_star_count()
 	for i in range(2, (levels_star_count.size()/2) + 1):
 		var key = "level"+str(i)+"unlocked"
@@ -47,6 +48,12 @@ func back_btn_pressed():
 	
 func level_1_pressed():
 	level_selected = 1
+	$ButtonsSoundPlayer.stream = level_select_sound
+	$ButtonsSoundPlayer.play()
+	fade_out()
+	
+func level_2_pressed():
+	level_selected = 2
 	$ButtonsSoundPlayer.stream = level_select_sound
 	$ButtonsSoundPlayer.play()
 	fade_out()

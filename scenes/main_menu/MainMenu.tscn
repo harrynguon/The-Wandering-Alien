@@ -47,9 +47,13 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 800, 0 ) ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Background" type="CanvasLayer" parent="." index="0"]
 
@@ -65,7 +69,7 @@ texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform" ]
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
 [node name="Elements" type="Node2D" parent="." index="1"]
@@ -113,6 +117,10 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 805, 0 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="LevelSelect" parent="LevelSelectNode" index="0" instance=ExtResource( 8 )]
 

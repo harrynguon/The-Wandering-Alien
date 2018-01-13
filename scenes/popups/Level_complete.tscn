@@ -219,7 +219,7 @@ gradient = SubResource( 9 )
 width = 800
 _sections_unfolded = [ "Resource" ]
 
-[node name="Level_complete" type="Node2D" index="0"]
+[node name="Level_complete" type="Node2D"]
 
 position = Vector2( 400, -160 )
 scale = Vector2( 1.5, 1.5 )

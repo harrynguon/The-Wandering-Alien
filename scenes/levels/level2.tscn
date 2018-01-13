@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/art/bg/space background.png" type="Texture" id=3]
 
-[node name="level2.tmx-b1317be41800fb821ece7d4059a380b3" index="0" instance=ExtResource( 1 )]
+[node name="level2" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." index="4" instance=ExtResource( 2 )]
 

@@ -3,6 +3,7 @@ extends Node2D
 const LAST_LEVEL = 8
 
 var swish_sounds = preload("res://assets/sound_effects/level_complete_popup/swish-1.wav")
+var click_sound = preload("res://assets/sound_effects/level_complete_popup/button_click.wav")
 var number_of_stars
 
 func _ready():
@@ -79,11 +80,15 @@ func show_buttons():
 		$Frame/next.normal = $Frame/next.pressed
 
 func _on_home_pressed():
+	$AudioStreamPlayer.stream = click_sound
+	$AudioStreamPlayer.play()
 	$fading.show()
 	$AnimationPlayer.play("fade_below")
 
 # Restart the level
 func _on_restart_pressed():
+	$AudioStreamPlayer.stream = click_sound
+	$AudioStreamPlayer.play()
 	var fade_out_instance = load("res://scenes/util/fade_out_node.tscn").instance()
 	fade_out_instance.connect("anim_finished", self, "restart_game")
 	$Frame.hide()
@@ -96,8 +101,9 @@ func restart_game():
 
 # Advances forward to the next level
 func _on_next_pressed():
+	$AudioStreamPlayer.stream = click_sound
+	$AudioStreamPlayer.play()
 	if get_node("/root/global").current_level < LAST_LEVEL:
 		var current_level = get_node("/root/global").current_level
-		current_level += 1
 		get_node("/root/global").set_level(current_level + 1)
 	
