@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/art/mainmenu/quitbtn.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/mainmenu/quitbtn-pressed.png" type="Texture" id=7]
 [ext_resource path="res://scenes/main_menu/LevelSelect.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/music/main_menu/Ruskerdax-Pondering-the-Cosmos.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/music/main_menu/Intro-Theme.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -165,7 +165,7 @@ autoplay = ""
 
 stream = ExtResource( 9 )
 volume_db = 0.0
-autoplay = true
+autoplay = false
 mix_target = 0
 bus = "Master"
 
@@ -176,5 +176,6 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+_sections_unfolded = [ "Pause" ]
 
 

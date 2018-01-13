@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Intro-Theme.ogg-6411166bab0d1e13023fb75e5a154117.oggstr"
+
+[deps]
+
+source_md5="a55601bcfb4ab11e6c4ba9366d1204f2"
+
+[params]
+
+loop=true
+loop_offset=0
