@@ -42,16 +42,7 @@ func set_star_count(level_name, star_count):
 	if star_count > levels_star_count[level_name]:
 		levels_star_count[level_name] = star_count
 
-
-# TODO: Upon completing a level, check number of stars and see if the number of stars
-# is greater than the current number of stars. If so, update it, otherwise don't.
-# and then in mainmenu.gd, everytime it is instanced, update the corresponding
-# level with its number of stars achieved. Also unlock the level if stars >= 1 or
-# it is the next level available.
-func _ready():
-	var root = get_tree().get_root()
-	current_scene = root.get_child( root.get_child_count() - 1)
-	
+# CALL THIS FUNCTION WHEN THE PLAYER LOSES LIVES.
 func decrease_lives(no_lives):
 	emit_signal("decrease_life", no_lives)
 	
@@ -60,6 +51,10 @@ func star_picked_up():
 	
 func set_level(level):
 	current_level = level
+	
+func _ready():
+	var root = get_tree().get_root()
+	current_scene = root.get_child( root.get_child_count() - 1)
 
 # path -> the path to the scene to be loaded
 # play_anim -> whether or not the starting cutscene for

@@ -78,8 +78,6 @@ func _physics_process(delta):
 		target_speed -= 1
 	if Input.is_action_pressed("ui_right"):
 		target_speed +=  1
-	if Input.is_action_just_pressed("ui_down"):
-		get_node("/root/global").decrease_lives(1)
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)

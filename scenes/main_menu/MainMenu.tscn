@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 800, 0 ) ]
 }
 
-[node name="MainMenu" type="Node2D" index="0"]
+[node name="MainMenu" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -165,7 +165,7 @@ autoplay = ""
 
 stream = ExtResource( 9 )
 volume_db = 0.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
