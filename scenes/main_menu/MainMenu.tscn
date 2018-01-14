@@ -47,9 +47,10 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 800, 0 ) ]
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -64,6 +65,7 @@ scale = Vector2( 1, 1 )
 
 [node name="Space_Image" type="Sprite" parent="Background" index="0"]
 
+position = Vector2( -5, 0 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 centered = false
