@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ruskerdax-Pondering-the-Cosmos.ogg-9955a038cb9a1196393c8cbccd13bebe.oggstr"
+
+[deps]
+
+source_md5="b2fc95938d5c63f5c38e5169a3d9c280"
+
+[params]
+
+loop=true
+loop_offset=0
