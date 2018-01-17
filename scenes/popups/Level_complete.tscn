@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/popups/Level_complete.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/popups/level_over.png" type="Texture" id=2]
@@ -101,7 +101,25 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 
-resource_name = "star_count_from_left"
+resource_name = "slide_from_right"
+length = 0.8
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("fading:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 580, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
 length = 0.4
 loop = false
 step = 0.1
@@ -118,7 +136,7 @@ tracks/0/keys = {
 "values": [ Vector2( -450, -107 ), Vector2( -81, -107 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 1.3
 loop = false
@@ -160,7 +178,7 @@ tracks/2/keys = {
 "values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 0.9
 loop = false
@@ -190,7 +208,7 @@ tracks/1/keys = {
 "values": [ Color( 0.196078, 0.196078, 0.196078, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = false
@@ -208,18 +226,18 @@ tracks/0/keys = {
 "values": [ Vector2( 400, -160 ), Vector2( 400, 230 ) ]
 }
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=10]
 
 offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=10]
+[sub_resource type="GradientTexture" id=11]
 
-gradient = SubResource( 9 )
+gradient = SubResource( 10 )
 width = 800
 _sections_unfolded = [ "Resource" ]
 
-[node name="Level_complete" type="Node2D"]
+[node name="Level_complete" type="Node2D" index="0"]
 
 position = Vector2( 400, -160 )
 scale = Vector2( 1.5, 1.5 )
@@ -369,34 +387,33 @@ root_node = NodePath("..")
 anims/buttons_flying_up = SubResource( 2 )
 anims/fade_below = SubResource( 3 )
 anims/one_star = SubResource( 4 )
-anims/star_count_from_left = SubResource( 5 )
-anims/three_stars = SubResource( 6 )
-anims/two_stars = SubResource( 7 )
-anims/window_frame_fly_down = SubResource( 8 )
+anims/slide_from_right = SubResource( 5 )
+anims/star_count_from_left = SubResource( 6 )
+anims/three_stars = SubResource( 7 )
+anims/two_stars = SubResource( 8 )
+anims/window_frame_fly_down = SubResource( 9 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
-[node name="todo find and play each sound for each star" type="Node" parent="." index="2"]
-
-[node name="fading" type="Sprite" parent="." index="3"]
+[node name="fading" type="Sprite" parent="." index="2"]
 
 position = Vector2( 0, 500 )
-texture = SubResource( 10 )
+texture = SubResource( 11 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 600, 400 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
 
 layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
@@ -404,7 +421,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Timer" type="Timer" parent="." index="6"]
+[node name="Timer" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 1.0

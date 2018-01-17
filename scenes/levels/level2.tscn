@@ -1,16 +1,70 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/levels/level2.tmx" type="PackedScene" id=1]
-[ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/art/bg/space background.png" type="Texture" id=3]
+[ext_resource path="res://scripts/levels/BaseLevel.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/bg/sky background.png" type="Texture" id=3]
+[ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/items/Star.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/entities/enemies/purple_snail.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=8]
 
-[node name="level2" instance=ExtResource( 1 )]
+[sub_resource type="Animation" id=1]
 
-[node name="Player" parent="." index="4" instance=ExtResource( 2 )]
+length = 1.0
+loop = false
+step = 0.1
 
-position = Vector2( 261, 185 )
+[node name="level2" index="0" instance=ExtResource( 1 )]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
+[node name="BaseLevel" type="Node2D" parent="." index="4"]
+
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseLevel" index="0"]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/cutscene = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="CameraMovementCutscene" type="Camera2D" parent="BaseLevel/AnimationPlayer" index="0"]
+
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 0.4, 0.4 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Music" type="AudioStreamPlayer" parent="BaseLevel" index="1"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BaseLevel" index="2"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -23,17 +77,67 @@ scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BaseLevel/ParallaxBackground" index="0"]
 
 motion_scale = Vector2( 0, 0 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+[node name="background" type="Sprite" parent="BaseLevel/ParallaxBackground/ParallaxLayer" index="0"]
 
 scale = Vector2( 4, 4 )
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Offset", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="BaseLevel" index="3"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="GUI" parent="BaseLevel/CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+[node name="Popup" type="CanvasLayer" parent="BaseLevel" index="4"]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Stars" type="Node2D" parent="BaseLevel" index="5"]
+
+[node name="Star" parent="BaseLevel/Stars" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 272, 112 )
+
+[node name="Star2" parent="BaseLevel/Stars" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 240, 112 )
+
+[node name="Star3" parent="BaseLevel/Stars" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 208, 112 )
+
+[node name="Enemies" type="Node2D" parent="BaseLevel" index="6"]
+
+[node name="purple_snail" parent="BaseLevel/Enemies" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 240, 112 )
+
+[node name="Player" parent="BaseLevel" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 96, 112 )
+
+[node name="level_endpoint" parent="BaseLevel" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 544, 96 )
 
 

@@ -14,7 +14,7 @@ func _ready():
 
 # When the player picks up the star, fade out and self destruct
 func _on_Star_body_entered( body ):
-	if active:
+	if body.get_name() == "Player" and active:
 		$AudioStreamPlayer.play()
 		get_node("/root/global").star_picked_up()
 		$AnimationPlayer.play("fade_out")

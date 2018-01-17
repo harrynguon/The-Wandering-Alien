@@ -45,6 +45,9 @@ func _on_AnimationPlayer_animation_finished( name ):
 	# user pressed home button and fade anim has finished
 	elif name == "fade_below":
 		get_node("/root/global").goto_scene("res://scenes/main_menu/MainMenu.tscn", true)
+	elif name == "slide_from_right":
+		get_node("/root/global").goto_scene("res://scenes/levels/level%s.tscn" % \
+				get_node("/root/global").current_level)
 
 func set_number_of_stars(amount):
 	number_of_stars = amount
@@ -106,4 +109,6 @@ func _on_next_pressed():
 	if get_node("/root/global").current_level < LAST_LEVEL:
 		var current_level = get_node("/root/global").current_level
 		get_node("/root/global").set_level(current_level + 1)
+		$fading.show()
+		$AnimationPlayer.play("slide_from_right")
 	
