@@ -13,7 +13,6 @@ func _ready():
 	update_star_counts()
 	
 func update_star_counts():
-	# TODO: get all star counts and update for the level select screen
 	var levels_star_count = get_node("/root/global").get_level_star_count()
 	$LevelSelectNode/LevelSelect.set_star_counts(levels_star_count) # parse the whole dict
 	
