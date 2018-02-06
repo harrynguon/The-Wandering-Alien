@@ -26,16 +26,8 @@ var anim=""
 onready var sprite = $AnimatedSprite
 
 func _ready():
-	get_node("/root/global").connect("decrease_life", self, "hurt_player")
-	get_node("/root/global").connect("star_pickup", self, "increase_star")
 	no_lives = 3.0
 	no_stars = 0
-
-# global will emit signal when player has been hurt (indicated by spike instance script, etc)
-func hurt_player(amount):
-	if no_lives - amount <= 0:
-		print("game_over")
-	no_lives -= amount
 
 func increase_star():
 	no_stars += 1

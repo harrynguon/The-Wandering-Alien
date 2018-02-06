@@ -6,7 +6,11 @@ path="res://.import/level2.tmx-b1317be41800fb821ece7d4059a380b3.scn"
 
 [deps]
 
-source_md5="ab5aa881c77ad4bb8ace54c4002492fa"
+source_file="res://scenes/levels/level2.tmx"
+source_md5="d388d992d72fc6e2b48542adcb0b7887"
+
+dest_files=[ "res://.import/level2.tmx-b1317be41800fb821ece7d4059a380b3.scn" ]
+dest_md5="c40519384b2ddfef7cc8e9f64ba641a2"
 
 [params]
 

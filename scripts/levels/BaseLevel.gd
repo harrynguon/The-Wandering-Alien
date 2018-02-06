@@ -5,6 +5,9 @@ var dont_play_anim = false
 func _ready():
 	$AnimationPlayer.connect("animation_finished", self, "_on_AnimationPlayer_animation_finished")
 	$level_endpoint.connect("end_point_reached", self, "game_over")
+	for star in $Stars.get_children():
+		star.connect("star_picked_up", $Player, "increase_star")
+		star.connect("star_picked_up", $CanvasLayer/GUI, "increase_star")
 	$Player.prep_animation()
 	# hide gui
 	$CanvasLayer/GUI.hide()
@@ -14,6 +17,10 @@ func _ready():
 	fade_in_instance.connect("fade_finished", self, "on_fade_in_node_anim_finished")
 	add_child(fade_in_instance)
 	$fade_in_node.play("fade")
+
+func increase_star():
+	$Player.increase_star()
+	$CanvasLayer/GUI.increase_star()
 	
 func set_anim(result):
 	dont_play_anim = result
@@ -37,7 +44,7 @@ func on_fade_in_node_anim_finished():
 		$AnimationPlayer/CameraMovementCutscene.current = true
 		$AnimationPlayer.play("cutscene")
 
-# Make the player unable to move, hide the controls, and animate the
+# Make the player unable to move, hide the controls, an	d animate the
 # level over popup window
 func game_over():
 

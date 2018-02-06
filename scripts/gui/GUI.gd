@@ -1,7 +1,7 @@
 extends MarginContainer
 
 func _ready():
-	get_node("/root/global").connect("star_pickup", self, "increase_star")
+	pass
 
 # Increase the star counter at the top and play an animation
 func increase_star():

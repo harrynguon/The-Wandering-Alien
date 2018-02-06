@@ -1,5 +1,7 @@
 extends Area2D
 
+signal star_picked_up
+
 var active
 var going_up
 
@@ -15,8 +17,8 @@ func _ready():
 # When the player picks up the star, fade out and self destruct
 func _on_Star_body_entered( body ):
 	if body.get_name() == "Player" and active:
+		emit_signal("star_picked_up")
 		$AudioStreamPlayer.play()
-		get_node("/root/global").star_picked_up()
 		$AnimationPlayer.play("fade_out")
 		active = false
 

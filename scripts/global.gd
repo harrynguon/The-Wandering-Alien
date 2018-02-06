@@ -1,8 +1,5 @@
 extends Node
 
-signal decrease_life(amount)
-signal star_pickup
-
 var current_scene = null
 var current_level = 0
 
@@ -41,13 +38,6 @@ func load_game():
 func set_star_count(level_name, star_count):
 	if star_count > levels_star_count[level_name]:
 		levels_star_count[level_name] = star_count
-
-# CALL THIS FUNCTION WHEN THE PLAYER LOSES LIVES.
-func decrease_lives(no_lives):
-	emit_signal("decrease_life", no_lives)
-	
-func star_picked_up():
-	emit_signal("star_pickup")
 	
 func set_level(level):
 	current_level = level
