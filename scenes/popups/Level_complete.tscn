@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/popups/Level_complete.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/popups/level_over.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/art/popups/replay_pressed.png" type="Texture" id=8]
 [ext_resource path="res://assets/art/popups/next.png" type="Texture" id=9]
 [ext_resource path="res://assets/art/popups/next_pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/sound_effects/level_complete_popup/swish-1.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound_effects/level_complete_popup/button_click.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -233,6 +235,7 @@ colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
 
 [sub_resource type="GradientTexture" id=11]
 
+flags = 4
 gradient = SubResource( 10 )
 width = 800
 _sections_unfolded = [ "Resource" ]
@@ -250,6 +253,7 @@ __meta__ = {
 
 [node name="Frame" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="star_1" type="Sprite" parent="Frame" index="0"]
@@ -294,6 +298,7 @@ margin_right = 84.0
 margin_bottom = -56.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
@@ -321,6 +326,7 @@ margin_right = -285.0
 margin_bottom = -56.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
@@ -381,9 +387,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
+root_node = NodePath("..")
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/buttons_flying_up = SubResource( 2 )
 anims/fade_below = SubResource( 3 )
 anims/one_star = SubResource( 4 )
@@ -392,10 +400,7 @@ anims/star_count_from_left = SubResource( 6 )
 anims/three_stars = SubResource( 7 )
 anims/two_stars = SubResource( 8 )
 anims/window_frame_fly_down = SubResource( 9 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
 _sections_unfolded = [ "Pause", "Playback Options" ]
 
 [node name="fading" type="Sprite" parent="." index="2"]
@@ -412,16 +417,25 @@ layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+[node name="Swish_Sound" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = null
+stream = ExtResource( 11 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Timer" type="Timer" parent="." index="5"]
+[node name="Click_Sound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0

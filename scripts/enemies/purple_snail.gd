@@ -3,6 +3,8 @@ extends KinematicBody2D
 const WALK_SPEED = 50
 const FLOOR_NORMAL = Vector2(0, -1)
 
+#export(String, "purple", "blue")var type_of_snail
+
 var linear_vel = Vector2()
 var moving_left = true
 var anim=""
