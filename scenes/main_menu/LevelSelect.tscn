@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="LevelSelect" type="Node2D" index="0"]
+[node name="LevelSelect" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -51,6 +51,7 @@ margin_right = 105.0
 margin_bottom = -46.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
@@ -76,6 +77,7 @@ __meta__ = {
 
 [node name="level1" type="TouchScreenButton" parent="Border/Levels" index="0"]
 
+editor/display_folded = true
 position = Vector2( -115, -30 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 5 )
@@ -99,6 +101,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -129,6 +132,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="level2" type="TouchScreenButton" parent="Border/Levels" index="1"]
 
+editor/display_folded = true
 position = Vector2( -55, -30 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 5 )
@@ -152,6 +156,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -212,6 +217,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -272,6 +278,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -332,6 +339,7 @@ margin_right = 29.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -392,6 +400,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -452,6 +461,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
@@ -512,6 +522,7 @@ margin_right = 28.0
 margin_bottom = 31.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )

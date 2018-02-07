@@ -3,7 +3,7 @@ extends KinematicBody2D
 const WALK_SPEED = 50
 const FLOOR_NORMAL = Vector2(0, -1)
 
-#export(String, "purple", "blue")var type_of_snail
+export(String, "purple", "blue") var type_of_snail = "purple" setget type_of_snail_set
 
 var linear_vel = Vector2()
 var moving_left = true
@@ -45,3 +45,7 @@ func _physics_process(delta):
 		anim = "walk"
 		
 	sprite.play(anim)
+
+
+func type_of_snail_set(new_value):
+	type_of_snail = new_value
