@@ -30,7 +30,7 @@ func connect_levels():
 			$LevelSelectNode/LevelSelect.lock_level(i)
 		else:
 			$LevelSelectNode/LevelSelect.unlock_level(i)
-	# connect signals if the level has been unlocked
+	# connect signals to the buttons if the level has been unlocked
 	for level in $LevelSelectNode/LevelSelect/Border/Levels.get_children():
 		if global.levels_star_count[level.get_name()+"unlocked"] == true:
 			level.connect("pressed", self, "level_pressed", [level])

@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/browninnertiles.tsx-ff0bfa3b214a267b76981444279629bd.res"
+
+[deps]
+
+source_file="res://assets/art/tiles/browninnertiles.tsx"
+source_md5="ed84455bc6718fea1a6184142bb8d585"
+
+dest_files=[ "res://.import/browninnertiles.tsx-ff0bfa3b214a267b76981444279629bd.res" ]
+dest_md5="308e7480cade6508d6d419a9248cd6d7"
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=7
+embed_internal_images=false
+save_tiled_properties=false
+post_import_script=""

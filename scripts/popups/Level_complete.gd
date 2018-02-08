@@ -2,12 +2,24 @@ extends Node2D
 
 const LAST_LEVEL = 8
 
+export var play_star_sound = false
+export var play_swish_sound = false
+
 var number_of_stars = 0
 
 func _ready():
 	hide_buttons()
 	$Frame/Stars_Amount.hide()
 	$fading.hide()
+	
+func _process(delta):
+	if play_star_sound:
+		$Star_Sound.play()
+		play_star_sound = false
+		
+	if play_swish_sound:
+		$Swish_Sound.play()
+		play_swish_sound = false
 	
 # play the corresponding animation with the number of stars
 # collected

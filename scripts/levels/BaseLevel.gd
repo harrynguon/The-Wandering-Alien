@@ -57,6 +57,7 @@ func game_over():
 	$fade_in_node/CanvasLayer/black_background.modulate = Color(1, 1, 1, 0.2)
 	# create an instance of the level complete scene when needed, instead of having
 	# to add it to the editor manually hiding it when not in use
+	$Music.volume_db = -20 # will call sub-class's music node.
 	$Popup.add_child(load("res://scenes/popups/Level_complete.tscn").instance())
 	$Popup/Level_complete.set_number_of_stars($Player.no_stars)
 	$Popup/Level_complete.show()

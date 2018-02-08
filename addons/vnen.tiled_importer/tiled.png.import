@@ -6,7 +6,11 @@ path="res://.import/tiled.png-dbbabe58e4f927769540a522a2073689.stex"
 
 [deps]
 
+source_file="res://addons/vnen.tiled_importer/tiled.png"
 source_md5="cf7cf7bceb2edb4a3162d7bcf2926718"
+
+dest_files=[ "res://.import/tiled.png-dbbabe58e4f927769540a522a2073689.stex" ]
+dest_md5="fa8e4a0b66a20cc0c690e01f16151249"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

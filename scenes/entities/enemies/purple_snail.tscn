@@ -24,7 +24,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 8.40523, 6.80663 )
 
-[node name="purple_snail" type="KinematicBody2D"]
+[node name="purple_snail" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1

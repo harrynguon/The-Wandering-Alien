@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level_complete_sound.wav-d3d571dcae2d79ad2a52f8a5a420c23b.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/level_complete_popup/level_complete_sound.wav"
+source_md5="d4d8e1ea4e51a2dcd3a17b546fadaf48"
+
+dest_files=[ "res://.import/level_complete_sound.wav-d3d571dcae2d79ad2a52f8a5a420c23b.sample" ]
+dest_md5="f647de10cb5d65bcb461b3b6fd8b97df"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

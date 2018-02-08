@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/star.wav-c8d3e56620e972f633790217eac12ef5.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/level_complete_popup/star.wav"
+source_md5="21492547e6c30bdca0a87be6a361a5fe"
+
+dest_files=[ "res://.import/star.wav-c8d3e56620e972f633790217eac12ef5.sample" ]
+dest_md5="3d871de541f931d3ae5a860ed6a6315c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

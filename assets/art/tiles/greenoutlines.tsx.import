@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/greenoutlines.tsx-a629d87fb24b9d9e52d6dc6fbfc1c2bb.res"
+
+[deps]
+
+source_file="res://assets/art/tiles/greenoutlines.tsx"
+source_md5="14ed9ad5c6f061ed7123e7c6a8eb3742"
+
+dest_files=[ "res://.import/greenoutlines.tsx-a629d87fb24b9d9e52d6dc6fbfc1c2bb.res" ]
+dest_md5="8c12b9a5c40abd0639e08506626994c0"
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=7
+embed_internal_images=false
+save_tiled_properties=false
+post_import_script=""
