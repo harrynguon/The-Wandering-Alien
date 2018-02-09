@@ -9,7 +9,6 @@
 [ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="Animation" id=1]
 
 length = 1.0
@@ -24,14 +23,13 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseLevel" index="0"]
 
+root_node = NodePath("..")
+autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/cutscene = SubResource( 1 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
 
 [node name="CameraMovementCutscene" type="Camera2D" parent="BaseLevel/AnimationPlayer" index="0"]
 
@@ -48,6 +46,8 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = false
 smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
 drag_margin_left = 0.2
 drag_margin_top = 0.2
 drag_margin_right = 0.2
@@ -71,6 +71,7 @@ layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 1, 1 )
@@ -103,8 +104,11 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="GUI" parent="BaseLevel/CanvasLayer" index="0" instance=ExtResource( 4 )]
+
+mouse_default_cursor_shape = 0
 
 [node name="Popup" type="CanvasLayer" parent="BaseLevel" index="4"]
 
@@ -112,6 +116,7 @@ layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Stars" type="Node2D" parent="BaseLevel" index="5"]
 
@@ -132,6 +137,7 @@ position = Vector2( 208, 112 )
 [node name="purple_snail" parent="BaseLevel/Enemies" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 240, 112 )
+type_of_snail = "purple"
 
 [node name="Player" parent="BaseLevel" index="7" instance=ExtResource( 7 )]
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/art/player gui/full_heart.png" type="Texture" id=1]
+[ext_resource path="res://assets/art/player_gui/full_heart.png" type="Texture" id=1]
+
 
 [node name="lives" type="HBoxContainer"]
 

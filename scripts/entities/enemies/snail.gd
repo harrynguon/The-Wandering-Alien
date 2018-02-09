@@ -41,7 +41,7 @@ func _physics_process(delta):
 	else:
 		sprite.flip_h = false
 		
-	if linear_vel <= Vector2(5, 5) and linear_vel >= Vector2(-5, -5):
+	if linear_vel <= Vector2(7, 5) and linear_vel >= Vector2(-7, -5):
 		sprite.flip_h = true
 		anim = "idle"
 	else:

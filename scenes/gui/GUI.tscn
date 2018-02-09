@@ -2,16 +2,17 @@
 
 [ext_resource path="res://scripts/gui/GUI.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui/lives.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/art/player gui/star_30x32.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/player_gui/star_30x32.png" type="Texture" id=3]
 [ext_resource path="res://assets/font/m5x7.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/art/player gui/pausebtn.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/player gui/pausebtnpressed.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/player gui/left_not_pressed.png" type="Texture" id=7]
-[ext_resource path="res://assets/art/player gui/left_pressed.png" type="Texture" id=8]
-[ext_resource path="res://assets/art/player gui/right_not_pressed.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/player gui/right_pressed.png" type="Texture" id=10]
-[ext_resource path="res://assets/art/player gui/up_not_pressed.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/player gui/up_pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/player_gui/pausebtn.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/player_gui/pausebtnpressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/player_gui/left_not_pressed.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/player_gui/left_pressed.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/player_gui/right_not_pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/player_gui/right_pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/player_gui/up_not_pressed.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/player_gui/up_pressed.png" type="Texture" id=12]
+
 
 [sub_resource type="DynamicFont" id=1]
 
