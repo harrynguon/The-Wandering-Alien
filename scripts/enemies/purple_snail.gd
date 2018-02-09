@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const WALK_SPEED = 50
+var WALK_SPEED = 50
 const FLOOR_NORMAL = Vector2(0, -1)
 
 export(String, "purple", "blue") var type_of_snail = "purple" setget type_of_snail_set
@@ -13,8 +13,10 @@ var anim=""
 onready var sprite = $AnimatedSprite
 
 func _ready():
+	# push to floor
 	linear_vel += Vector2(0, 100)
-	pass
+	if type_of_snail == "blue":
+		WALK_SPEED = 70
 	
 func _physics_process(delta):
 	# Move and Slide
@@ -40,11 +42,15 @@ func _physics_process(delta):
 		sprite.flip_h = false
 		
 	if linear_vel <= Vector2(5, 5) and linear_vel >= Vector2(-5, -5):
+		sprite.flip_h = true
 		anim = "idle"
 	else:
 		anim = "walk"
-		
-	sprite.play(anim)
+	
+	if type_of_snail == "purple":
+		sprite.play("purple_"+anim)
+	else:
+		sprite.play("blue_"+anim)
 
 
 func type_of_snail_set(new_value):

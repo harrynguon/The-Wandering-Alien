@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-2-5.png-cb409243c865a219da7ca9da74629208.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/slimes/green_slime/enemies [www.imagesplitter.net]-2-5.png"
+source_md5="3d7f8114ef52812a933e2649b17e4b81"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-2-5.png-cb409243c865a219da7ca9da74629208.stex" ]
+dest_md5="d9d3add8e2abaeca9a710b5bd3a0b0e6"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

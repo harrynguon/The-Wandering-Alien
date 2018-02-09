@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-4-0.png-86fb1230f1f5425f501a501bae550e97.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/flies/black_fly/enemies [www.imagesplitter.net]-4-0.png"
+source_md5="fa19b75cc38bcb697e029133cd98006d"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-4-0.png-86fb1230f1f5425f501a501bae550e97.stex" ]
+dest_md5="0a9cb5460297c2f330e5e4e8d9ee558d"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

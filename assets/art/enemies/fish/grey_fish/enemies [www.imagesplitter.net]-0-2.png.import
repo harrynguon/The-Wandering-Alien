@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-0-2.png-0858eb14bc64ed70f482a35217461c7a.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/fish/grey_fish/enemies [www.imagesplitter.net]-0-2.png"
+source_md5="f056e5ca4284ccee75c5e1dc88205c0f"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-0-2.png-0858eb14bc64ed70f482a35217461c7a.stex" ]
+dest_md5="354d9f096989c8f8b7e33e2578d22def"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

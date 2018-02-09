@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-3-2.png-3442d44b6e6c73de148f09feae9ca7f9.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/fish/green_fish/enemies [www.imagesplitter.net]-3-2.png"
+source_md5="80fc769e27c2628db543624dda585abc"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-3-2.png-3442d44b6e6c73de148f09feae9ca7f9.stex" ]
+dest_md5="bed424b269c952a65f56c6411e14eb98"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

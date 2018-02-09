@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-4-4.png-1c78b6213e6ce05083078b3dce2a6d66.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/flies/grey_fly/enemies [www.imagesplitter.net]-4-4.png"
+source_md5="1db1021cea2055658a196c862ff756d0"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-4-4.png-1c78b6213e6ce05083078b3dce2a6d66.stex" ]
+dest_md5="e4ab17e3b3d285c5cd90ca57bc81b152"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

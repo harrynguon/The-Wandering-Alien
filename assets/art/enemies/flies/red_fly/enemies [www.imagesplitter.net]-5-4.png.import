@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/enemies [www.imagesplitter.net]-5-4.png-5ab3f13e7000a5e08275516c3bb5a155.stex"
+
+[deps]
+
+source_file="res://assets/art/enemies/flies/red_fly/enemies [www.imagesplitter.net]-5-4.png"
+source_md5="0edcbc8469a078dab99b30017769d58f"
+
+dest_files=[ "res://.import/enemies [www.imagesplitter.net]-5-4.png-5ab3f13e7000a5e08275516c3bb5a155.stex" ]
+dest_md5="a45646f27179340418193212ef3451d4"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

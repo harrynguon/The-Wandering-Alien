@@ -2,11 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemies.png-4137fd0119a7db9c8d049990065482fc.stex"
+path="res://.import/death.png-0d2d701a51b0b2762f42c8c3995e06dd.stex"
 
 [deps]
 
-source_md5="aec910cceeb2438f3a3d0915ef110844"
+source_file="res://assets/art/enemies/snail/blue_snail/death.png"
+source_md5="8a109760358c78547f19c8701611d002"
+
+dest_files=[ "res://.import/death.png-0d2d701a51b0b2762f42c8c3995e06dd.stex" ]
+dest_md5="83a3670ea92fdddfaf44984b07338b9e"
 
 [params]
 

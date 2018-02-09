@@ -5,9 +5,10 @@
 [ext_resource path="res://assets/art/bg/sky background.png" type="Texture" id=3]
 [ext_resource path="res://scenes/gui/GUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/items/Star.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/entities/enemies/purple_snail.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/entities/enemies/snail.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/entities/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/util/level_endpoint.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="Animation" id=1]
 
