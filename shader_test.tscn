@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+	// divide each co-ordinate by the resolution to find out the value from 0-1.
+	float stx = FRAGCOORD.x / 800.0;
+	float sty = FRAGCOORD.y / 480.0;
+	COLOR = vec4(stx, sty, abs(sin(TIME)), 1.0);
+}"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+_sections_unfolded = [ "shader_param" ]
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+
+flags = 4
+gradient = SubResource( 3 )
+width = 2048
+
+[node name="TextureRect" type="TextureRect" index="0"]
+
+material = SubResource( 2 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -400.0
+margin_top = -240.0
+margin_right = 400.0
+margin_bottom = 240.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Visibility" ]
+
+
